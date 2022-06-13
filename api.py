@@ -1,10 +1,8 @@
-from hashlib import new
 from flask import Flask, jsonify, request
 from flask_pymongo import PyMongo
 from flask import make_response
 from bson.json_util import dumps, loads
 import yaml
-import json
 
 app = Flask(__name__)
 
