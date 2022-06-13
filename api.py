@@ -1,3 +1,4 @@
+from hashlib import new
 from flask import Flask, jsonify, request
 from flask_pymongo import PyMongo
 from flask import make_response
@@ -20,11 +21,11 @@ def not_found(error):
 def Homepage():
     return jsonify({"Instruction":
     {"#1 | /Books": "Get all books",
-     "#2 | /Books/<title>":"Get books by name",
+     "#2 | /Books/<title>":"Get books by id",
      "#3 | /Author/<name>":"Get books by author name",
      "#4 | /Books":"Add new books with POST method and JSON Body",
      "#5 | /Books/<title>":"Update books with PUT method",
-     "#6 | /Books/<title>":"Delete books by title"
+     "#6 | /Books/<title>":"Delete books by id"
      }})
 
 @app.route('/Books', methods = ['GET'])
@@ -32,9 +33,9 @@ def Books():
     all_books = mongo.db.Books.find()
     return dumps(all_books)
 
-@app.route('/Books/<string:title>', methods = ['GET'])
-def getBook(title):
-    wanted_books = list(mongo.db.Books.find({'title':title}))
+@app.route('/Books/<int:id>', methods = ['GET'])
+def getBook(id):
+    wanted_books = list(mongo.db.Books.find({'_id':id}))
     return dumps(wanted_books)
 
 @app.route('/Author/<string:name>', methods = ['GET'])
@@ -53,21 +54,21 @@ def addBooks():
         else:
             return make_response(jsonify({'info': 'Successfully Added'}), 200)
 
-@app.route('/Books/<string:title>', methods = ['PUT'])
-def updateBooks(title):
+@app.route('/Books/<int:id>', methods = ['PUT'])
+def updateBooks(id):
     if request.headers['Content-Type'] == "application/json":
         book_document = request.json
         try:
-            mongo.db.Books.update_many({"title": title}, {"$set": book_document})
+            mongo.db.Books.update_many({"_id": id}, {"$set": book_document})
         except:
             return make_response(jsonify({'error': 'Not Updated'}), 404)
         else:
             return make_response(jsonify({'info': 'Successfully Updated'}), 200)
 
-@app.route('/Books/<string:title>', methods = ['DELETE'])
-def deleteBooks(title):
+@app.route('/Books/<int:id>', methods = ['DELETE'])
+def deleteBooks(id):
     try:
-        mongo.db.Books.delete_many({"title":title})
+        mongo.db.Books.delete_many({"_id":id})
     except:
         return make_response(jsonify({'error': 'Not Deleted'}), 404)
     else:
