@@ -22,11 +22,11 @@ def not_found(error):
 def Homepage():
     return jsonify({"Instruction":
     {"#1 | /Books": "Get all books",
-     "#2 | /Books/<title>":"Get books by id",
-     "#3 | /Author/<name>":"Get books by author name",
+     "#2 | /Books/<book id>":"Get books by id",
+     "#3 | /Author/<author name>":"Get books by author name",
      "#4 | /Books":"Add new books with POST method and JSON Body",
-     "#5 | /Books/<title>":"Update books with PUT method",
-     "#6 | /Books/<title>":"Delete books by id"
+     "#5 | /Books/<book id>":"Update books with PUT method",
+     "#6 | /Books/<book id>":"Delete books by id"
      }})
 
 @app.route('/Books/', methods = ['GET'])
