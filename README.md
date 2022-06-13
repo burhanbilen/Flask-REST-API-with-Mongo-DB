@@ -10,21 +10,21 @@ Instructions:
   6. Insert sample collections with
   ```
   db.Books.insertMany([
-      {_id:1, title:"Deniz Kurdu", author:"Jack London"},
-      {_id:2, title:"İki Şehrin Hikayesi", author:"Charles Dickens"},
-      {_id:3, title:"Araba Sevdası", author:"Recaizade Mahmut Ekrem"},
-      {_id:4, title:"Çalıkuşu", author:"Reşat Nuri Güntekin"},
-      {_id:5, title:"Titan'ın Laneti", author:"Rick Riordan"},
-      {_id:6, title:"Şimşek Hırsızı", author:"Rick Riordan"},
-      {_id:7, title:"Gohor: Cam Kent", author:"Aşkın Güngör"},
-      {_id:8, title:"Kurtlar Yolu", author:"Aşkın Güngör"},
-      {_id:9, title:"Özgürlük Uğruna", author:"Barış Müstecaplıoğlu"},
-      {_id:10, title:"Marslı", author:"Andy Weir"},
-      {_id:11, title:"Beyaz Diş", author:"Jack London"},
-      {_id:12, title:"Çile", author:"Necip Fazıl Kısakürek"},
-      {_id:13, title:"İlahi Komedya", author:"Dante"},
-      {_id:14, title:"1984", author:"George Orwell"},
-      {_id:15, title:"Sefiller", author:"Victor Hugo"}
+    {_id:NumberInt(1), title:"Deniz Kurdu", author:"Jack London"},
+    {_id:NumberInt(2), title:"İki Şehrin Hikayesi", author:"Charles Dickens"},
+    {_id:NumberInt(3), title:"Araba Sevdası", author:"Recaizade Mahmut Ekrem"},
+    {_id:NumberInt(4), title:"Çalıkuşu", author:"Reşat Nuri Güntekin"},
+    {_id:NumberInt(5), title:"Titan'ın Laneti", author:"Rick Riordan"},
+    {_id:NumberInt(6), title:"Şimşek Hırsızı", author:"Rick Riordan"},
+    {_id:NumberInt(7), title:"Gohor: Cam Kent", author:"Aşkın Güngör"},
+    {_id:NumberInt(8), title:"Kurtlar Yolu", author:"Aşkın Güngör"},
+    {_id:NumberInt(9), title:"Özgürlük Uğruna", author:"Barış Müstecaplıoğlu"},
+    {_id:NumberInt(10), title:"Marslı", author:"Andy Weir"},
+    {_id:NumberInt(11), title:"Beyaz Diş", author:"Jack London"},
+    {_id:NumberInt(12), title:"Çile", author:"Necip Fazıl Kısakürek"},
+    {_id:NumberInt(13), title:"İlahi Komedya", author:"Dante"},
+    {_id:NumberInt(14), title:"1984", author:"George Orwell"},
+    {_id:NumberInt(15), title:"Sefiller", author:"Victor Hugo"}
   ])
   ```
 
