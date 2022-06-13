@@ -8,7 +8,8 @@ Instructions:
   4. Create a database called *BookShelf* with `use BookShelf`.
   5. Create a collection called *Books* with `db.createCollection("Books")`.
   6. Insert sample collections with
-  ``` db.Books.insertMany([
+  ```
+  db.Books.insertMany([
       {_id:1, title:"Deniz Kurdu", author:"Jack London"},
       {_id:2, title:"İki Şehrin Hikayesi", author:"Charles Dickens"},
       {_id:3, title:"Araba Sevdası", author:"Recaizade Mahmut Ekrem"},
@@ -23,7 +24,8 @@ Instructions:
       {_id:12, title:"Çile", author:"Necip Fazıl Kısakürek"},
       {_id:13, title:"İlahi Komedya", author:"Dante"},
       {_id:14, title:"1984", author:"George Orwell"},
-      {_id:15, title:"Sefiller", author:"Victor Hugo"}])
+      {_id:15, title:"Sefiller", author:"Victor Hugo"}
+  ])
   ```
 
 Pseudo Code:
