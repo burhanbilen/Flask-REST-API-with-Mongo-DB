@@ -9,6 +9,8 @@ app = Flask(__name__)
 with open('db.yaml') as db_config_file:
     db_config = yaml.load(db_config_file, Loader = yaml.SafeLoader)
 
+app.config["JSON_AS_ASCII"] = False # Setting ensure_ascii=False for removing unicodes in fields
+app.config["JSON_SORT_KEYS"] = False # Setting sort_keys=False for jsonify not to sort fields
 app.config['MONGO_URI'] = f"mongodb://{db_config['server']}:{db_config['port']}/{db_config['db_name']}"
 mongo = PyMongo(app)
 
@@ -30,17 +32,18 @@ def Homepage():
 @app.route('/Books/', methods = ['GET'])
 def Books():
     all_books = mongo.db.Books.find()
-    return jsonify(loads(dumps(all_books, ensure_ascii=False)))
+    return jsonify(loads(dumps(all_books)))
 
 @app.route('/Books/<int:id>/', methods = ['GET'])
 def getBook(id):
     wanted_books = list(mongo.db.Books.find({'_id':id}))
-    return jsonify(loads(dumps(wanted_books, ensure_ascii=False)))
+    return jsonify(loads(dumps(wanted_books)))
 
 @app.route('/Author/<string:name>/', methods = ['GET'])
 def getAuthorBooks(name):
     author_books = list(mongo.db.Books.find({'author':name}))
-    return jsonify(loads(dumps(author_books, ensure_ascii=False)))
+    print(loads(dumps(author_books)))
+    return jsonify(loads(dumps(author_books)))
 
 @app.route('/Books', methods = ['POST'])
 def addBooks():
