@@ -2,8 +2,9 @@ from hashlib import new
 from flask import Flask, jsonify, request
 from flask_pymongo import PyMongo
 from flask import make_response
-from bson.json_util import dumps
+from bson.json_util import dumps, loads
 import yaml
+import json
 
 app = Flask(__name__)
 
@@ -28,20 +29,20 @@ def Homepage():
      "#6 | /Books/<title>":"Delete books by id"
      }})
 
-@app.route('/Books', methods = ['GET'])
+@app.route('/Books/', methods = ['GET'])
 def Books():
     all_books = mongo.db.Books.find()
-    return dumps(all_books)
+    return jsonify(loads(dumps(all_books, ensure_ascii=False)))
 
-@app.route('/Books/<int:id>', methods = ['GET'])
+@app.route('/Books/<int:id>/', methods = ['GET'])
 def getBook(id):
     wanted_books = list(mongo.db.Books.find({'_id':id}))
-    return dumps(wanted_books)
+    return jsonify(loads(dumps(wanted_books, ensure_ascii=False)))
 
-@app.route('/Author/<string:name>', methods = ['GET'])
+@app.route('/Author/<string:name>/', methods = ['GET'])
 def getAuthorBooks(name):
     author_books = list(mongo.db.Books.find({'author':name}))
-    return dumps(author_books)
+    return jsonify(loads(dumps(author_books, ensure_ascii=False)))
 
 @app.route('/Books', methods = ['POST'])
 def addBooks():
