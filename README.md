@@ -10,24 +10,24 @@ Instructions:
   6. Insert sample collections with
   ```
   db.Books.insertMany([
-    {_id:NumberInt(1), title:"Deniz Kurdu", author:"Jack London"},
-    {_id:NumberInt(2), title:"İki Şehrin Hikayesi", author:"Charles Dickens"},
-    {_id:NumberInt(3), title:"Araba Sevdası", author:"Recaizade Mahmut Ekrem"},
-    {_id:NumberInt(4), title:"Çalıkuşu", author:"Reşat Nuri Güntekin"},
-    {_id:NumberInt(5), title:"Titan'ın Laneti", author:"Rick Riordan"},
-    {_id:NumberInt(6), title:"Şimşek Hırsızı", author:"Rick Riordan"},
-    {_id:NumberInt(7), title:"Gohor: Cam Kent", author:"Aşkın Güngör"},
-    {_id:NumberInt(8), title:"Kurtlar Yolu", author:"Aşkın Güngör"},
-    {_id:NumberInt(9), title:"Özgürlük Uğruna", author:"Barış Müstecaplıoğlu"},
-    {_id:NumberInt(10), title:"Marslı", author:"Andy Weir"},
-    {_id:NumberInt(11), title:"Beyaz Diş", author:"Jack London"},
-    {_id:NumberInt(12), title:"Çile", author:"Necip Fazıl Kısakürek"},
-    {_id:NumberInt(13), title:"İlahi Komedya", author:"Dante"},
-    {_id:NumberInt(14), title:"1984", author:"George Orwell"},
-    {_id:NumberInt(15), title:"Sefiller", author:"Victor Hugo"}
+    {_id:NumberInt(1), title:"Deniz Kurdu", author:"Jack London", page:NumberInt(376)},
+    {_id:NumberInt(2), title:"İki Şehrin Hikayesi", author:"Charles Dickens", page:NumberInt(508)},
+    {_id:NumberInt(3), title:"Araba Sevdası", author:"Recaizade Mahmut Ekrem", page:NumberInt(320)},
+    {_id:NumberInt(4), title:"Çalıkuşu", author:"Reşat Nuri Güntekin", page:NumberInt(541)},
+    {_id:NumberInt(5), title:"Titan'ın Laneti", author:"Rick Riordan", page:NumberInt(282)},
+    {_id:NumberInt(6), title:"Şimşek Hırsızı", author:"Rick Riordan", page:NumberInt(363)},
+    {_id:NumberInt(7), title:"Gohor: Cam Kent", author:"Aşkın Güngör", page:NumberInt(200)},
+    {_id:NumberInt(8), title:"Kurtlar Yolu", author:"Aşkın Güngör", page:NumberInt(176)},
+    {_id:NumberInt(9), title:"Özgürlük Uğruna", author:"Barış Müstecaplıoğlu", page:NumberInt(280)},
+    {_id:NumberInt(10), title:"Marslı", author:"Andy Weir", page:NumberInt(416)},
+    {_id:NumberInt(11), title:"Beyaz Diş", author:"Jack London", page:NumberInt(258)},
+    {_id:NumberInt(12), title:"Çile", author:"Necip Fazıl Kısakürek", page:NumberInt(512)},
+    {_id:NumberInt(13), title:"İlahi Komedya", author:"Dante", page:NumberInt(838)},
+    {_id:NumberInt(14), title:"1984", author:"George Orwell", page:NumberInt(352)},
+    {_id:NumberInt(15), title:"Sefiller", author:"Victor Hugo", page:NumberInt(400)}
   ])
   ```
-
+  
 Pseudo Code:
   1. Import Libraries
   2. Read YAML configuration file for database credentials.
