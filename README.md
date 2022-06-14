@@ -37,8 +37,8 @@ Pseudo Code:
 
 Endpoints:
   1. 'GET' &nbsp; &nbsp; &nbsp; &nbsp;: "/Books"                 ->  Get all books
-  2. 'GET' &nbsp; &nbsp; &nbsp; &nbsp;: "/Books/```<book id>```"     ->  Get books by name
+  2. 'GET' &nbsp; &nbsp; &nbsp; &nbsp;: "/Books/```<book id>```"     ->  Get books by id
   3. 'GET' &nbsp; &nbsp; &nbsp; &nbsp;: "/Author/```<author name>```"  ->  Get books by author name
   4. 'POST' &nbsp; &nbsp; &nbsp;: "/Books"                 ->  Send JSON Body to add new books (can do with Postman, swagger, etc.)
   5. 'PUT' &nbsp; &nbsp; &nbsp; &nbsp;: "/Books/```<book id>```"      ->  Update books by name with a JSON Body
-  6. 'DELETE' : "/Books/```<book id>```"      ->  Delete books by name
+  6. 'DELETE' : "/Books/```<book id>```"      ->  Delete books by id
