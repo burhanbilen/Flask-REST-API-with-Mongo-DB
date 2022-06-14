@@ -7,7 +7,7 @@ Instructions:
   3. Type `mongo` or `mongo --port 27017` in terminal/cmd.
   4. Create a database called *BookShelf* with `use BookShelf`.
   5. Create a collection called *Books* with `db.createCollection("Books")`.
-  6. Insert sample collections with
+  6. Insert sample documents with
   ```
   db.Books.insertMany([
     {_id:NumberInt(1), title:"Deniz Kurdu", author:"Jack London", page:NumberInt(376)},
